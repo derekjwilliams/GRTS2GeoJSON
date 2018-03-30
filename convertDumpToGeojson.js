@@ -16,7 +16,7 @@ proj4.defs('WGS84', "+title=WGS 84 (long/lat) +proj=longlat +ellps=WGS84 +datum=
 const proj84 = '+title=WGS 84 (long/lat) +proj=longlat +ellps=WGS84 +datum=WGS84 +units=degrees"'
 const proj3857 = 'PROJCS["WGS 84 / Pseudo-Mercator Geoserver",GEOGCS["WGS 84",DATUM["World Geodetic System 1984",SPHEROID["WGS 84",6378137.0,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0.0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.017453292519943295],AXIS["Geodetic longitude",EAST],AXIS["Geodetic latitude",NORTH],AUTHORITY["EPSG","4326"]],PROJECTION["Popular Visualisation Pseudo Mercator",AUTHORITY["EPSG","1024"]],PARAMETER["semi_minor",6378137.0],PARAMETER["latitude_of_origin",0.0],PARAMETER["central_meridian",0.0],PARAMETER["scale_factor",1.0],PARAMETER["false_easting",0.0],PARAMETER["false_northing",0.0],UNIT["m",1.0],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","3857"]]'
 const esri = 'PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["GCS_WGS_1984",DATUM["D_WGS_1984",SPHEROID["WGS_1984",6378137,298.257223563]],PRIMEM["Greenwich",0],UNIT["Degree",0.017453292519943295]],PROJECTION["Mercator"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["Meter",1]]'
-
+const albersUSA = 'PROJCS["USA_Contiguous_Albers_Equal_Area_Conic_USGS_version",GEOGCS["GCS_North_American_1983",DATUM["D_North_American_1983",SPHEROID["GRS_1980",6378137.0,298.257222101]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Albers"],PARAMETER["False_Easting",0.0],PARAMETER["False_Northing",0.0],PARAMETER["Central_Meridian",-96.0],PARAMETER["Standard_Parallel_1",29.5],PARAMETER["Standard_Parallel_2",45.5],PARAMETER["Latitude_Of_Origin",23.0],UNIT["Meter",1.0]]'
 let instream = fs.createReadStream('full14.csv');
 instream.on('end', () => { ended = true });
 var ended = false
@@ -36,6 +36,8 @@ lineReader.on('line', function (line) {
 
   polygonString = line.substr(b).replace(/\\/g, '')
   const polygon = JSON.parse(polygonString)
+  
+  // silly trapizoid handling, fix this
   const corners = []
   let minX = 100000000
   let maxX = -100000000
@@ -43,8 +45,6 @@ lineReader.on('line', function (line) {
   let maxY = -100000000
 
   for (let i = 0; i < polygon.coordinates[0].length; i++) {
-    // console.log(i)
-    // console.log(JSON.stringify(polygon.coordinates[0][i]))
     if (polygon.coordinates[0][i][0] >= globalMaxX) {
       globalMaxX = polygon.coordinates[0][i][0]
     }
@@ -63,18 +63,9 @@ lineReader.on('line', function (line) {
     if (polygon.coordinates[0][i][1] <= minY) {
       minY = polygon.coordinates[0][i][1]
     }
-    // if (i > 0) {
-
-    //   console.log('delta y:' + Math.abs(polygon.coordinates[0][i][1] - polygon.coordinates[0][i-1][1]))
-    //   console.log('delta x:' + Math.abs(polygon.coordinates[0][i][0] - polygon.coordinates[0][i-1][0]))
-    //   // console.log('delta y:' + (polygon.coordinates[0][i][1] - polygon.coordinates[0][i-1][1]))
-    // }
   }
 
-  // console.log('\n maxX: ' + maxX)
-  // console.log('\n minX: ' + minX)
-  // console.log('\n maxY: ' + maxY)
-  // console.log('\n minY: ' + minY)
+
   for (let i = 0; i < polygon.coordinates[0].length; i++) {
     if (polygon.coordinates[0][i][0] === maxX) {
       corners.push(i)
@@ -96,38 +87,17 @@ lineReader.on('line', function (line) {
   for (let i = 0; i < corners.length; i++){
     cornerPoints.push(polygon.coordinates[0][corners[i]])  
   }
-  // silly trapizoid handling, fix this
+
   cornerPoints.push(polygon.coordinates[0][corners[0]]) 
+
+  // albersUSA
+  // was proj84
   if (!(maxX > -10682238.0062 && maxX < -10669380.1429)) {
-    polygon84 = {"type" : "Polygon", "coordinates": [cornerPoints.map(v => proj4(proj3857, proj84, v))]}
+    polygon84 = {"type" : "Polygon", "coordinates": [cornerPoints.map(v => proj4(proj3857, albersUSA, v))]}
   } else {
-    polygon84 = {"type" : "Polygon", "coordinates": [polygon.coordinates[0].map(v => proj4(proj3857, proj84, v))]}
+    polygon84 = {"type" : "Polygon", "coordinates": [polygon.coordinates[0].map(v => proj4(proj3857, albersUSA, v))]}
   }
-    //   "bbox": [0, 12.469025989284091, 1142.7924311762474, 900],
-    // "transform":
-    // {
-    //     "scale": [0.009995801851947097, -0.005844667153098606],
-    //     "translate": [0, 600]
-    // },
-
-  // if (maxX > -10682238.0062 && maxX < -10669380.1429) {
-//  if (maxX > -10816523.7205248 && maxX < -10616523.7205248) {
-    // console.log(id)
-    // console.log(JSON.stringify(polygon.coordinates[0]))
-    // pos++
-    // if (pos % 1000 === 0) {
-    //   console.log(pos)
-    // }
-
-    // const z = [polygon.coordinates[0].map(v => proj4(proj3857, proj84, v))]
-    // console.log(`\npoints: ${JSON.stringify(z)}`)
-    // const polygon840 = {"type" : "Polygon", "coordinates": z}
-    // const polygon841 = {"type" : "Polygon", "coordinates": [polygon.coordinates[0].map(v => proj4(proj3857, proj84, v))]}
-    // console.log('\n 84: ' + JSON.stringify(polygon84) )
-    // console.log('\n 840: ' + JSON.stringify(polygon840) )
-    // console.log('\n 841: ' + JSON.stringify(polygon841) )
     result.geometry.geometries.push(polygon84)
-  // }
 });
 
 instream.on('end', () => { 

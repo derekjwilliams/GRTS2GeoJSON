@@ -1,0 +1,41 @@
+.grts {
+  fill: #30303000;
+  stroke: #555555;
+  stroke-width: 0.1px;
+}
+.grts :hover {
+  fill: red;
+}
+.states {
+  fill: #f0f0f0ab;
+  stroke: #205050ab;
+  stroke-width: 0.5px;
+}
+
+.state-borders {
+  fill: none;
+  stroke: black;
+  stroke-width: 0.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+.grts-borders {
+  fill: none;
+  stroke: #222;
+  stroke-width: 0.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+.map-nav {
+  padding-top: 10px;
+  background-image: url("simp.jpg");
+  background-repeat: no-repeat;
+  background-size: 1024px 636px;
+  background-position: -0.84cm 0.07cm;
+  /*border: 2px solid brown;*/
+  width: 3904px;
+  height: 2440px;
+}
