@@ -1,0 +1,314 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Colin Talbert</origin>
+        <origin>Brian Reichert</origin>
+        <pubdate>201810</pubdate>
+        <title>North American Bat Monitoring Program (NABat) Master Sample and Grid-Based Sampling Frame: Continental United States at a 10x10km resolution</title>
+        <geoform>vector digital data</geoform>
+        <pubinfo>
+          <pubplace>Fort Collins, CO</pubplace>
+          <publish>USGS Fort Collins Science Center</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.5066/P9O75YDV</onlink>
+        <lworkcit>
+          <citeinfo>
+            <origin>Patricia Stevens</origin>
+            <origin>Brian Reichert</origin>
+            <pubdate>20180724</pubdate>
+            <title>North American Bat Monitoring Program</title>
+            <geoform>project</geoform>
+            <pubinfo>
+              <pubplace>Fort Collins, CO</pubplace>
+              <publish>USGS Fort Collins Science Center</publish>
+            </pubinfo>
+            <onlink>https://nabatmonitoring.org/#/home/welcome</onlink>
+          </citeinfo>
+        </lworkcit>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>The NABat sampling frame is a grid-based finite-area frame spanning Canada, the United States, and Mexico consisting of 10-km by 10-km (100-km2) grid cell sample units.  This grain size is biologically appropriate given the scale of movement of most bat species, which routinely travel many kilometers each night between roosts and foraging areas and along foraging routes.  A draw of sample units from a finite sampling frame using the GRTS design produces an ordered list of units such that any ordered subset of that list is also randomized and spatially balanced. 
+
+This vector dataset is the individual grid-based sampling grid for Continental United States at a 10x10km resolution.</abstract>
+      <purpose>The GRTS design provides solutions to several practical challenges faced by bat surveyors that are not provided by more familiar designs such as simple random, stratified, and systematic sampling. The GRTS design allows for sample site additions and deletions, supports unequal-probability selection of survey locations, and provides an approximately unbiased neighborhood-weighted variance estimator that takes advantage of the spatial structure present in the surveyed population.</purpose>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <sngdate>
+          <caldate>2018</caldate>
+        </sngdate>
+      </timeinfo>
+      <current>publication date</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>None planned</update>
+    </status>
+    <spdom>
+      <descgeog>Continental United States</descgeog>
+      <bounding>
+        <westbc>-127.9449</westbc>
+        <eastbc>-65.2626</eastbc>
+        <northbc>51.5144</northbc>
+        <southbc>22.9170</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>biota</themekey>
+        <themekey>location</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Thesaurus</themekt>
+        <themekey>ecosystem monitoring</themekey>
+      </theme>
+      <place>
+        <placekt>Common geographic areas</placekt>
+        <placekey>United States</placekey>
+      </place>
+    </keywords>
+    <accconst>None.  Please see 'Distribution Info' for details.</accconst>
+    <useconst>None.  Users are advised to read the data set's metadata thoroughly to understand appropriate use and data limitations.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Brian E Reichert</cntper>
+          <cntorg>U.S. Geological Survey, SOUTHWEST REGION</cntorg>
+        </cntperp>
+        <cntpos>Ecologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>2150 Centre Avenue Bldg C</address>
+          <city>Fort Collins</city>
+          <state>CO</state>
+          <postal>80526</postal>
+          <country>US</country>
+        </cntaddr>
+        <cntvoice>970-226-9245</cntvoice>
+        <cntfax>970-226-9230</cntfax>
+        <cntemail>breichert@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <crossref>
+      <citeinfo>
+        <origin>Susan C. Loeb</origin>
+        <origin>Thomas J. Rodhouse</origin>
+        <origin>Laura E. Ellison</origin>
+        <origin>Cori L. Lausen</origin>
+        <origin>Jonathan D. Reichard</origin>
+        <origin>Kathryn M. Irvine</origin>
+        <origin>Thomas E. Ingersoll</origin>
+        <origin>Jeremy T. H. Coleman</origin>
+        <origin>Wayne E. Thogmartin</origin>
+        <origin>John R. Sauer</origin>
+        <origin>Charles M. Francis</origin>
+        <origin>Mylea L. Bayless</origin>
+        <origin>Thomas R. Stanley</origin>
+        <origin>Douglas H. Johnson</origin>
+        <pubdate>201506</pubdate>
+        <title>A Plan for the North American Bat Monitoring Program (NABat)</title>
+        <geoform>publication</geoform>
+        <onlink>https://www.srs.fs.usda.gov/pubs/gtr/gtr_srs208.pdf</onlink>
+      </citeinfo>
+      <citeinfo>
+        <origin>Patricia Stevens</origin>
+        <origin>Brian Reichert</origin>
+        <origin>Colin Talbert</origin>
+        <pubdate>201810</pubdate>
+        <title>Attributed North American Bat Monitoring Program (NABat) Master Sample and Grid-Based Sampling Frame</title>
+        <geoform>vector digital data</geoform>
+        <pubinfo>
+          <pubplace>Fort Collins, CO</pubplace>
+          <publish>USGS Fort Collins Science Center</publish>
+        </pubinfo>
+        <onlink>https://doi.org/10.5066/P9RRWXL6</onlink>
+      </citeinfo>
+    </crossref>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>GRTS IDs were checked for consistent spatial distribution.</attraccr>
+    </attracc>
+    <logic>Values were manually checked for minimum and maximum values within expected ranges.</logic>
+    <complete>None</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>Positional accuracy was manually checked in ArcMap</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>NA</vertaccr>
+      </vertacc>
+    </posacc>
+    <lineage>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Patricia Stevens</origin>
+            <origin>Brian Reichert</origin>
+            <origin>Colin Talbert</origin>
+            <pubdate>201807</pubdate>
+            <title>North American Grid-Based Sampling Frame</title>
+            <geoform>vector digital data</geoform>
+            <pubinfo>
+              <pubplace>Fort Collins, CO</pubplace>
+              <publish>USGS Fort Collins Science Center</publish>
+            </pubinfo>
+            <onlink>https://doi.org/10.5066/P9M00P17</onlink>
+          </citeinfo>
+        </srccite>
+        <typesrc>Digital and/or Hardcopy</typesrc>
+        <srctime>
+          <timeinfo>
+            <sngdate>
+              <caldate>2018</caldate>
+            </sngdate>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>NASamplingFrame</srccitea>
+        <srccontr>The geometry and unique IDs for the 10km cells.</srccontr>
+      </srcinfo>
+      <procstep>
+        <procdesc>The spsurvey package in R was used to generate a Generalized Random-Tessellation Stratified (GRTS) Survey Design draw on the 10km North American Grid-Based Sampling Frame.  The 'grts' function was used with an equal design and a finite frame.  8675309 was used as the seed.</procdesc>
+        <srcused>NASamplingFrame</srcused>
+        <procdate>201807</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>conus_mastersample_10km_GRTS.shp</enttypl>
+        <enttypd>Table containing attribute information associated with the data set.</enttypd>
+        <enttypds>Producer defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>FID</attrlabl>
+        <attrdef>Internal feature number.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <udom>Sequential unique whole numbers that are automatically generated.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Shape</attrlabl>
+        <attrdef>Feature geometry type.</attrdef>
+        <attrdefs>ESRI</attrdefs>
+        <attrdomv>
+          <udom>String description of feature geometry type.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>CONUS_10KM</attrlabl>
+        <attrdef>The unique ID of this 10x10km grid cell</attrdef>
+        <attrdefs>Producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>133807</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>lat</attrlabl>
+        <attrdef>The geographic WGS84 decimal degree latitude of the grid cell centroid.</attrdef>
+        <attrdefs>Producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>22.972633252879454</rdommin>
+            <rdommax>51.49812330117566</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>long</attrlabl>
+        <attrdef>The geographic WGS84 decimal degree longitude of the grid cell centroid.</attrdef>
+        <attrdefs>Producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-65.34694505251443</rdommin>
+            <rdommax>-127.86039406892418</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>GRTS_ID</attrlabl>
+        <attrdef>Generalized Random-Tessellation Stratified (GRTS) Survey Design draw.</attrdef>
+        <attrdefs>Producer defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>133807</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>U.S. Geological Survey</cntorg>
+          <cntper>GS ScienceBase</cntper>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>Denver Federal Center, Building 810, Mail Stop 302</address>
+          <city>Denver</city>
+          <state>CO</state>
+          <postal>80225</postal>
+          <country>United States</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data on any other system or for general or scientific purposes, nor shall the act of distribution constitute any such warranty.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Digital Data</formname>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://doi.org/10.5066/P9O75YDV</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>201809</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Colin Talbert</cntper>
+          <cntorg>U.S. Geological Survey, Southwest Region</cntorg>
+        </cntperp>
+        <cntpos>IT SPEC (DATAMGT)</cntpos>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>2150 Centre Avenue Bldg C</address>
+          <city>Fort Collins</city>
+          <state>CO</state>
+          <postal>80526</postal>
+          <country>United States</country>
+        </cntaddr>
+        <cntvoice>970-226-9425</cntvoice>
+        <cntfax>970-226-9230</cntfax>
+        <cntemail>talbertc@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Biological Data Profile of the Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001.1-1999</metstdv>
+  </metainfo>
+</metadata>

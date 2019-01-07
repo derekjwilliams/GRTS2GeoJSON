@@ -7,7 +7,7 @@
 463 (x) 4 630 000 meters
 289 (y) 2 890 000 meters
 
-*Note: Long and Lat relation to X and Y is not certain*
+*Note: Long and Lat seems to be the center of the rectangle*
 
 ### Top Left
 

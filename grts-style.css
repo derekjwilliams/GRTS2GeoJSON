@@ -3,6 +3,11 @@
   stroke: #555555;
   stroke-width: 0.1px;
 }
+.grts2 {
+  fill: #30303055;
+  stroke: #406e8d;
+  stroke-width: 0.2px;
+}
 .grts :hover {
   fill: red;
 }
@@ -31,7 +36,8 @@
 }
 .map-nav {
   padding-top: 10px;
-  background-image: url("simp.jpg");
+  background-color: white;
+  /* background-image: url("simp.jpg"); */
   background-repeat: no-repeat;
   background-size: 1024px 636px;
   background-position: -0.84cm 0.07cm;
