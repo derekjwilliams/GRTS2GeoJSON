@@ -23,9 +23,9 @@ d3.json("us-maps/us-10m.v1.json", function(error, us) {
   const projection = d3.geoMercator();
   svg.append("g")
     .attr('shape-rendering', 'geometricprecision')
-    .attr("class", "states")
+    .attr("class", "nation")
     .selectAll("path")
-    .data(topojson.feature(us, us.objects.states).features)
+    .data(topojson.feature(us, us.objects.nation).features)
     .enter().append("path")
     .attr("d", path)
 
