@@ -28,6 +28,8 @@ d3.json("us-maps/us-10m.v1.json", function(error, us) {
     .data(topojson.feature(us, us.objects.nation).features)
     .enter().append("path")
     .attr("d", path)
+    .attr('fill', 'url(#grid)')
+    .attr('stroke', '#999')
 
 svg.append('defs')
 .append('pattern')
