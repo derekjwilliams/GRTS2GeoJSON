@@ -23,6 +23,14 @@ d3.json("us-maps/us-10m.v1.json", function(error, us) {
   const projection = d3.geoMercator();
   svg.append("g")
     .attr('shape-rendering', 'geometricprecision')
+    .attr("class", "states")
+    .selectAll("path")
+    .data(topojson.feature(us, us.objects.states).features)
+    .enter().append("path")
+    .attr("d", path)
+
+  svg.append("g")
+    .attr('shape-rendering', 'geometricprecision')
     .attr("class", "nation")
     .selectAll("path")
     .data(topojson.feature(us, us.objects.nation).features)
@@ -48,13 +56,13 @@ svg.append('defs')
 .attr('fill', 'none')
 .attr('stroke', '#999')
 .attr('stroke-width', '0.3px')
-svg.append('circle')
+/*svg.append('circle')
 .attr('fill', 'url(#grid)')
 .attr('stroke', '#999')
 .attr('cx', '480')
 .attr('cy', '300')
 .attr('r', '300px')
-.attr('transform', 'translate(0.59,-0.48)')
+.attr('transform', 'translate(0.59,-0.48)')*/
   
   d3.json("fulldec14topo.json?q=39", function(error, us) {
     if (error) {
