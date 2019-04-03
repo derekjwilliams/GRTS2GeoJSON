@@ -11,7 +11,7 @@
 .grts :hover {
   fill: red;
 }
-.states {
+.states .counties {
   fill: #f0f0f0ab;
   stroke: #205050ab;
   stroke-width: 0.5px;
