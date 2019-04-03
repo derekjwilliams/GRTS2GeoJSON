@@ -31,6 +31,14 @@ d3.json("us-maps/us-10m.v1.json", function(error, us) {
 
   svg.append("g")
     .attr('shape-rendering', 'geometricprecision')
+    .attr("class", "counties")
+    .selectAll("path")
+    .data(topojson.feature(us, us.objects.counties).features)
+    .enter().append("path")
+    .attr("d", path)
+
+  svg.append("g")
+    .attr('shape-rendering', 'geometricprecision')
     .attr("class", "nation")
     .selectAll("path")
     .data(topojson.feature(us, us.objects.nation).features)
