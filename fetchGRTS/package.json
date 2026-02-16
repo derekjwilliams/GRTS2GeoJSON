@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "csvtojson": "^2.0.8",
+    "csvtojson": "^2.0.13",
     "node-fetch": "^2.3.0"
   }
 }
